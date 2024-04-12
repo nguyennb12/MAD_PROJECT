@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Label for the Spinner -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_people_guest"
+            android:padding="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerNumberOfPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/number_of_travelers" />
+
+        <!-- Destination 1: Paris -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imgParis"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/paris"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/paris_250"
+                android:textAlignment="center"/>
+            <Button
+                android:id="@+id/btnParis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select"/>
+
+                 <!-- Paris Download Button-->
+            <Button
+            android:id="@+id/btnDownloadParis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paris Guide" />
+
+            <!-- Button to visit Paris website-->
+            <Button
+                android:id="@+id/btnVisitParis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Website" />
+
+
+            <!-- Destination 2: London -->
+            <ImageView
+                android:id="@+id/imgLondon"
+                android:layout_below="@+id/Paris"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/london"
+                tools:ignore="ObsoleteLayoutParam" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="London - $500"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnLondon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select"
+                tools:ignore="DuplicateIds,HardcodedText" />
+
+            <!-- London Download Button-->
+            <Button
+                android:id="@+id/btnDownloadLondon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="London Guide" />
+
+            <!-- Button to visit London website-->
+            <Button
+                android:id="@+id/btnVisitLondon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Website"
+                tools:ignore="HardcodedText" />
+
+
+            <!-- Destination 2: Toronto -->
+            <ImageView
+                android:id="@+id/imgToronto"
+                android:layout_below="@+id/btnLondon"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/toronto"
+                tools:ignore="ObsoleteLayoutParam" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toronto - $1000"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText" />
+
+            <!-- Toronto Select Button-->
+            <Button
+                android:id="@+id/btnToronto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select"
+                tools:ignore="DuplicateIds,HardcodedText" />
+
+            <!-- Toronto Download Button-->
+            <Button
+                android:id="@+id/btnDownloadToronto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toronto Guide" />
+
+            <!-- Button to visit Toronto website-->
+            <Button
+                android:id="@+id/btnVisitToronto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit Website" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

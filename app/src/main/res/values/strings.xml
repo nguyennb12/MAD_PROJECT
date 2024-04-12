@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Trip_Planner</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_password">Password</string>
+    <string name="reg_username">Username</string>
+    <string name="username_input">Username</string>
+    <string name="password_input">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="reg_btn">Register</string>
+    <string name="confirm_pw">Confirm Password</string>
+    <string-array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="title_activity_trip_planner">TripPlanner</string>
+    <string name="destination">Destination</string>
+    <string name="travel_dates">Travel Dates</string>
+    <string-array name="number_of_travelers">Number of Travelers
+        <item> 1</item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4  </item>
+        <item> 5 </item>
+    </string-array>
+    <string-array name="country_names">
+        <item>United States</item>
+        <item>Canada</item>
+        <item>United Kingdom</item>
+        <item>Germany</item>
+        <item>France</item>
+        <!-- Add more countries as needed -->
+    </string-array>
+    <string name="search_flights">Search Flights</string>
+    <string name="number_of_people_guest">Number of People</string>
+    <string name="paris_250">Paris - $250</string>
+</resources>
