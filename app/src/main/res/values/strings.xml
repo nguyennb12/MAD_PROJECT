@@ -33,4 +33,16 @@
     <string name="search_flights">Search Flights</string>
     <string name="number_of_people_guest">Number of People</string>
     <string name="paris_250">Paris - $250</string>
+
+
+    <string name="fromString">From : </string>
+    <string name="toString">To : </string>
+    <string name="selectString">Select</string>
+    <string name="transportationString">Transportation : </string>
+    <string-array name="spinnerTransportationArray">Transportation
+        <item> Car </item>
+        <item> Train </item>
+        <item> Ship </item>
+        <item> Airplane  </item>
+    </string-array>
 </resources>

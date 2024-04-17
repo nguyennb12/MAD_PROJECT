@@ -25,6 +25,106 @@
             android:layout_height="wrap_content"
             android:entries="@array/number_of_travelers" />
 
+
+        <!-- From Date       -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/from"
+                style="@style/stringStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fromString"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/fromDateId"
+                style="@style/stringStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/from"
+                android:text="" />
+
+            <Button
+                android:id="@+id/fromButtonId"
+                android:layout_width="131dp"
+                android:layout_height="39dp"
+                android:layout_alignBaseline="@id/fromDateId"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:text="@string/selectString"
+                tools:ignore="RelativeOverlap"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+
+        <!--        To date-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/to"
+                style="@style/stringStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toString"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/toDateId"
+                style="@style/stringStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/to"
+                android:text=""
+                />
+
+            <Button
+                android:id="@+id/toButtonId"
+                android:layout_width="131dp"
+                android:layout_height="39dp"
+                android:layout_alignBaseline="@id/toDateId"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="0dp"
+                android:text="@string/selectString"
+                tools:ignore="RelativeOverlap"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+        <!-- Transportation  -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Transportation"
+                style="@style/stringStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transportationString"
+                android:layout_centerVertical="true"/>
+
+            <Spinner
+                android:id="@+id/spinnerTransportation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+
         <!-- Destination 1: Paris -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,11 +138,6 @@
                 android:layout_height="200dp"
                 android:src="@drawable/paris"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/paris_250"
-                android:textAlignment="center"/>
             <Button
                 android:id="@+id/btnParis"
                 android:layout_width="match_parent"
@@ -143,6 +238,12 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/paris_250"
+            android:textAlignment="center" />
 
     </LinearLayout>
 </ScrollView>
