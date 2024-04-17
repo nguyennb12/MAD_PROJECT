@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 public class TotalPrice extends AppCompatActivity {
 
     @Override
