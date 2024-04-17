@@ -38,7 +38,7 @@ public class TripPlanner extends AppCompatActivity {
     private final String urlLondonGuide = "https://content.tfl.gov.uk/london-visitor-guide.pdf";
     private final String urlTorontoGuide = "https://guides.tripomatic.com/download/tripomatic-free-city-guide-toronto.pdf";
 
-
+    // other Press button
     Button fromDateButton = null;
     Button toDateButton = null;
     private SaveList mSaveList;         // save and load date information. - in this case, using SharedPreferences.
