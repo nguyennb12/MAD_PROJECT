@@ -19,7 +19,8 @@ public class TotalPrice extends AppCompatActivity {
         String fromDate = saveList.loadFromDate();
         String toDate = saveList.loadToDate();
         String transportationMode = saveList.loadSelectedTransportation();
-        int numberOfPeople = saveList.loadNumberOfPeople(); // Update here
+        int numberOfPeople = saveList.loadNumberOfPeople();
+        String location = saveList.loadSelectedLocation(); // Load location here
 
         // Find the TextViews for each data and set their values
         TextView textViewTotalPrice = findViewById(R.id.textViewTotalPrice);
@@ -36,5 +37,8 @@ public class TotalPrice extends AppCompatActivity {
 
         TextView textViewTransportationMode = findViewById(R.id.textViewTransportationMode);
         textViewTransportationMode.setText("Transportation Mode: " + transportationMode);
+
+        TextView textViewLocation = findViewById(R.id.textViewLocationSelected);
+        textViewLocation.setText("Location: " + location); // Set location text
     }
 }
