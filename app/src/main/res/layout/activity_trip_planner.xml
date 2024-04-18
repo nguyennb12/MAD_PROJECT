@@ -138,6 +138,12 @@
                 android:layout_height="200dp"
                 android:src="@drawable/paris"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/paris_250"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/btnParis"
                 android:layout_width="match_parent"
@@ -239,11 +245,7 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/paris_250"
-            android:textAlignment="center" />
+
 
     </LinearLayout>
 </ScrollView>

@@ -7,31 +7,96 @@
     android:background="@drawable/beach"
     tools:context=".TotalPrice">
 
+    <!-- Display Total Price -->
     <TextView
         android:id="@+id/textViewTotalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total Price: $0"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/ratingBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
 
+    <!-- Display Number of People -->
+    <TextView
+        android:id="@+id/textViewNumberOfPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of People: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTotalPrice"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
+
+    <!-- Display Dates Selected -->
+    <TextView
+        android:id="@+id/textViewFromDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Date: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewNumberOfPeople"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewToDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Date: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewFromDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
+
+    <!-- Display Transportation Mode -->
+    <TextView
+        android:id="@+id/textViewTransportationMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transportation Mode: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewToDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
+
+    <!-- Display Location Selected -->
+    <TextView
+        android:id="@+id/textViewLocationSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location Selected: "
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTransportationMode"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
+
+    <!-- Rating Bar -->
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:numStars="5"
         android:stepSize="1.0"
-        app:layout_constraintBottom_toTopOf="@id/submitRatingButton"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewTotalPrice"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLocationSelected" />
 
+    <!-- Submit Rating Button -->
     <Button
         android:id="@+id/submitRatingButton"
         android:layout_width="wrap_content"
@@ -41,6 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ratingBar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

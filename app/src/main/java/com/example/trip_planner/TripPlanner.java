@@ -1,7 +1,9 @@
 package com.example.trip_planner;
 
 import android.app.DatePickerDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -25,9 +27,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
 
-import android.content.ActivityNotFoundException;
-import android.net.Uri;
-
 public class TripPlanner extends AppCompatActivity {
 
     private Spinner spinnerNumberOfPeople;
@@ -38,10 +37,9 @@ public class TripPlanner extends AppCompatActivity {
     private final String urlLondonGuide = "https://content.tfl.gov.uk/london-visitor-guide.pdf";
     private final String urlTorontoGuide = "https://guides.tripomatic.com/download/tripomatic-free-city-guide-toronto.pdf";
 
-
     Button fromDateButton = null;
     Button toDateButton = null;
-    private SaveList mSaveList;         // save and load date information. - in this case, using SharedPreferences.
+    private SaveList mSaveList; // save and load date information. - in this case, using SharedPreferences.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,10 +132,21 @@ public class TripPlanner extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         transportationSpinner.setAdapter(adapter);
 
-        // Save the transportation
-        String selectedTransportation = transportationSpinner.getSelectedItem().toString();
-        mSaveList.saveSelectedTransportation(selectedTransportation);
+        // Save the transportation whenever it changes
+        transportationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedTransportation = parent.getItemAtPosition(position).toString();
+                mSaveList.saveSelectedTransportation(selectedTransportation);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
         /////////////////////////////////////////////
+
     }
 
     private void initializeComponents() {
@@ -254,6 +263,4 @@ public class TripPlanner extends AppCompatActivity {
     interface DownloadCallback {
         void onDownloadComplete(File file);
     }
-
-
 }
