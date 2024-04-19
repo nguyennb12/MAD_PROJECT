@@ -39,6 +39,7 @@
     <string name="toString">To : </string>
     <string name="selectString">Select</string>
     <string name="transportationString">Transportation : </string>
+    <string name="admin_login">Admin Login</string>
     <string-array name="spinnerTransportationArray">Transportation
         <item> Car </item>
         <item> Train </item>

@@ -1,0 +1,15 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Background color for the button -->
+    <solid android:color="#3B84F1"/> <!-- Dark blue color -->
+
+    <!-- Border for the button -->
+    <stroke
+        android:width="1dp"/><!-- Border width -->
+    <solid android:color="#3B84F1"/> <!-- Border color -->
+
+    <!-- Rounded corners for the button -->
+    <corners android:radius="4dp"/> <!-- Adjust the radius as needed -->
+
+</shape>

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="@drawable/beach">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"/> <!-- Semi-transparent black -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,114 +18,117 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Label for the Spinner -->
+        <!-- Label for the number of people -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/number_of_people_guest"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             android:padding="8dp" />
 
+        <!-- Spinner for selecting the number of people -->
         <Spinner
             android:id="@+id/spinnerNumberOfPeople"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#30ffffff"
             android:entries="@array/number_of_travelers" />
 
 
-        <!-- From Date       -->
+        <!-- Date selection layout for 'From' -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:orientation="horizontal"
-            >
+            android:layout_height="wrap_content"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/from"
-                style="@style/stringStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fromString"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/fromDateId"
-                style="@style/stringStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/from"
-                android:text="" />
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_centerVertical="true" />
 
             <Button
                 android:id="@+id/fromButtonId"
-                android:layout_width="131dp"
-                android:layout_height="39dp"
-                android:layout_alignBaseline="@id/fromDateId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="0dp"
                 android:text="@string/selectString"
-                tools:ignore="RelativeOverlap"
-                android:layout_centerVertical="true"/>
+                android:backgroundTint="#3B84F1"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
         </RelativeLayout>
 
 
-        <!--        To date-->
-
+        <!-- Date selection layout for 'To' -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/to"
-                style="@style/stringStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/toString"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/toDateId"
-                style="@style/stringStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/to"
-                android:text=""
-                />
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_centerVertical="true"/>
 
             <Button
                 android:id="@+id/toButtonId"
-                android:layout_width="131dp"
-                android:layout_height="39dp"
-                android:layout_alignBaseline="@id/toDateId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="0dp"
                 android:text="@string/selectString"
-                tools:ignore="RelativeOverlap"
-                android:layout_centerVertical="true"
-                />
+                android:backgroundTint="#3B84F1"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
         </RelativeLayout>
 
         <!-- Transportation  -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/Transportation"
-                style="@style/stringStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/transportationString"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 android:layout_centerVertical="true"/>
 
             <Spinner
                 android:id="@+id/spinnerTransportation"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
+                android:background="#30ffffff"
+                android:layout_toEndOf="@id/Transportation"
                 android:layout_centerVertical="true" />
 
         </RelativeLayout>
@@ -248,4 +257,5 @@
 
 
     </LinearLayout>
+    </FrameLayout>
 </ScrollView>

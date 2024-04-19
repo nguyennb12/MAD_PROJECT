@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Updated style for general text elements used in the app -->
     <style name="stringStyle">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">18sp</item> <!-- Updated text size to match input fields and buttons -->
+        <item name="android:textColor">#FFFFFF</item> <!-- White color for better readability against dark backgrounds -->
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!-- New style for EditText elements to ensure consistent theming -->
+    <style name="EditTextStyle" parent="android:Widget.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">@drawable/rounded_edittext</item> <!-- Assumes you have a drawable for rounded corners -->
+    </style>
+
+    <!-- New style for Button elements to ensure consistent theming -->
+    <style name="ButtonStyle" parent="android:Widget.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/dark_blue</item> <!-- Assuming dark_blue is defined in your colors.xml -->
+        <item name="android:padding">12dp</item>
+    </style>
 </resources>
