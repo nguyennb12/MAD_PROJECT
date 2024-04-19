@@ -2,7 +2,10 @@ package com.example.trip_planner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Button;
 
 public class TotalPrice extends AppCompatActivity {
 
@@ -11,30 +14,35 @@ public class TotalPrice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_price);
 
-        // Get the total price passed from TripPlanner activity
-        int totalPrice = getIntent().getIntExtra("totalPrice", 0);
+        // Assuming you have your rating bar and submit button setup in your XML layout
+        RatingBar ratingBar = findViewById(R.id.ratingBar);
+        Button submitRatingButton = findViewById(R.id.submitRatingButton);
 
-        // Retrieve other data from SaveList
-        SaveList saveList = new SaveList(this);
-        String fromDate = saveList.loadFromDate();
-        String toDate = saveList.loadToDate();
-        String transportationMode = saveList.loadSelectedTransportation();
-        int numberOfPeople = saveList.loadNumberOfPeople(); // Update here
-
-        // Find the TextViews for each data and set their values
+        // Assuming you have your text views setup in your XML layout
         TextView textViewTotalPrice = findViewById(R.id.textViewTotalPrice);
-        textViewTotalPrice.setText(String.format("Total Price: $%d", totalPrice));
-
         TextView textViewNumberOfPeople = findViewById(R.id.textViewNumberOfPeople);
-        textViewNumberOfPeople.setText("Number of People: " + numberOfPeople);
-
         TextView textViewFromDate = findViewById(R.id.textViewFromDate);
-        textViewFromDate.setText("From Date: " + fromDate);
-
         TextView textViewToDate = findViewById(R.id.textViewToDate);
-        textViewToDate.setText("To Date: " + toDate);
-
         TextView textViewTransportationMode = findViewById(R.id.textViewTransportationMode);
-        textViewTransportationMode.setText("Transportation Mode: " + transportationMode);
+        TextView textViewLocation = findViewById(R.id.textViewLocationSelected);
+
+        // Set up a click listener for the submit button
+        submitRatingButton.setOnClickListener(v -> {
+            // Assuming you have obtained the rating from the rating bar
+            float rating = ratingBar.getRating();
+
+            // Your logic to submit the rating goes here
+
+            // Show a notification that the rating has been submitted
+            Toast.makeText(TotalPrice.this, "Rating submitted. Thank you!", Toast.LENGTH_SHORT).show();
+        });
+
+        // Assuming you have retrieved and set the data for the text views
+        textViewTotalPrice.setText("Total Price: $100");
+        textViewNumberOfPeople.setText("Number of People: 4");
+        textViewFromDate.setText("From Date: 2024-04-20");
+        textViewToDate.setText("To Date: 2024-04-25");
+        textViewTransportationMode.setText("Transportation Mode: Flight");
+        textViewLocation.setText("Location: Paris");
     }
 }
