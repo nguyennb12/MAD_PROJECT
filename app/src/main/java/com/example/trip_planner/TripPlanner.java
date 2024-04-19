@@ -58,7 +58,7 @@ public class TripPlanner extends AppCompatActivity {
         fromDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // This declaration is needed to make DatePicker widget to pick departure date
+                // Declaration to make DatePicker widget to pick departure date
                 Calendar calendar = Calendar.getInstance();
                 int year = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONTH);
@@ -89,7 +89,7 @@ public class TripPlanner extends AppCompatActivity {
         toDateButton = findViewById(R.id.toButtonId);
         TextView toDateTextView = findViewById(R.id.toDateId);
         toDateButton.setOnClickListener(new View.OnClickListener() {
-            // This declaration is needed to make DatePicker widget to pick arrival date
+            // Declaration to make DatePicker widget to pick arrival date
             @Override
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();

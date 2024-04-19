@@ -24,7 +24,7 @@ public class Register extends AppCompatActivity {
 
         EditText usernameEditText = findViewById(R.id.reg_username);
         EditText passwordEditText = findViewById(R.id.reg_password);
-        EditText confirmPasswordEditText = findViewById(R.id.confirm_password); // Assuming you add this field
+        EditText confirmPasswordEditText = findViewById(R.id.confirm_password);
         EditText emailEditText = findViewById(R.id.reg_email);
         Button regBtn = findViewById(R.id.reg_btn);
         RadioGroup genderRadioGroup = findViewById(R.id.genderRadioGroup);
