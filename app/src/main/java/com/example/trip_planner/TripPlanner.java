@@ -154,7 +154,7 @@ public class TripPlanner extends AppCompatActivity {
         setupSpinner();
         setupPriceButtons();
         setupDownloadButtons();
-        setupSelectButtons(); // Changed to setupSelectButtons
+        setupVisitButtons();
     }
 
     private void setupSpinner() {
@@ -166,7 +166,7 @@ public class TripPlanner extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 numberOfPeople = Integer.parseInt(parent.getItemAtPosition(position).toString());
-                mSaveList.saveNumberOfPeople(numberOfPeople); // Save the selected number of people
+                mSaveList.saveNumberOfPeople(numberOfPeople); // Save the updated number of people
             }
 
             @Override
@@ -196,36 +196,33 @@ public class TripPlanner extends AppCompatActivity {
         btnDownloadToronto.setOnClickListener(v -> downloadGuide(urlTorontoGuide, "toronto_guide.pdf", this::openDownloadedFile));
     }
 
-    private void setupSelectButtons() {
-        Button btnSelectParis = findViewById(R.id.btnVisitParis);
-        Button btnSelectLondon = findViewById(R.id.btnVisitLondon);
-        Button btnSelectToronto = findViewById(R.id.btnVisitToronto);
+    private void setupVisitButtons() {
+        Button btnVisitToronto = findViewById(R.id.btnVisitToronto);
+        Button btnVisitLondon = findViewById(R.id.btnVisitLondon);
+        Button btnVisitParis = findViewById(R.id.btnVisitParis);
 
-        btnSelectParis.setOnClickListener(v -> navigateToTotalPriceActivity(250, "Paris"));
-        btnSelectLondon.setOnClickListener(v -> navigateToTotalPriceActivity(500, "London"));
-        btnSelectToronto.setOnClickListener(v -> navigateToTotalPriceActivity(1000, "Toronto"));
+        btnVisitToronto.setOnClickListener(v -> visitWebsite("https://www.toronto.ca/"));
+        btnVisitLondon.setOnClickListener(v -> visitWebsite("https://london.ca/"));
+        btnVisitParis.setOnClickListener(v -> visitWebsite("https://www.france.fr/en/paris"));
     }
 
-    private void selectCity(String city) {
-        Log.d("TripPlanner", "Selecting city: " + city);
-        mSaveList.saveSelectedLocation(city); // Save the selected location
-        Log.d("TripPlanner", "Saved location: " + mSaveList.loadSelectedLocation());
-        Toast.makeText(this, "Selected location: " + city, Toast.LENGTH_SHORT).show();
+    private void visitWebsite(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, "No application found to open this URL", Toast.LENGTH_LONG).show();
+        }
     }
 
-    private void navigateToTotalPriceActivity(int pricePerPerson, String selectedCity) {
-        // Save the selected city
-        selectCity(selectedCity);
-
-        // Calculate total price
+    private void navigateToTotalPriceActivity(int pricePerPerson, String selectedLocation) {
         int totalPrice = numberOfPeople * pricePerPerson;
-
-        // Start TotalPrice activity
+        mSaveList.saveSelectedLocation(selectedLocation); // Save the selected location
         Intent intent = new Intent(this, TotalPrice.class);
         intent.putExtra("totalPrice", totalPrice);
-        intent.putExtra("selectedCity", selectedCity); // Pass the selected city
         startActivity(intent);
     }
+
 
     private void openDownloadedFile(File file) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -262,8 +259,6 @@ public class TripPlanner extends AppCompatActivity {
             }
         }).start();
     }
-
-
 
     // Callback interface for download completion
     interface DownloadCallback {

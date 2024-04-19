@@ -143,25 +143,25 @@ public class SaveList {
     }
 
     /**
-     * Name       : saveSelectedLocation
-     * Purpose    : To save the selected location
-     * Inputs     : String location - the selected location
-     * Outputs    : NONE
-     * Returns    : Nothing
+     * Name	    : saveSelectedLocation
+     * Purpose  : To save the selected location
+     * Inputs	: String selectedLocation - the selected location
+     * Outputs	: NONE
+     * Returns	: Nothing
      */
-    public void saveSelectedLocation(String location) {
+    public void saveSelectedLocation(String selectedLocation) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("selectedLocation", location);
+        editor.putString("selectedLocation", selectedLocation);
         editor.apply();
     }
 
     /**
-     * Name       : loadSelectedLocation
-     * Purpose    : To load the selected location
-     * Inputs     : NONE
-     * Outputs    : NONE
-     * Returns    : String - the selected location
+     * Name	    : loadSelectedLocation
+     * Purpose  : To load the selected location
+     * Inputs	: NONE
+     * Outputs	: NONE
+     * Returns	: String - the selected location
      */
     public String loadSelectedLocation() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);

@@ -4,21 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class TotalPrice extends AppCompatActivity {
+
+    private SaveList mSaveList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_price);
 
-        // Assuming you have your rating bar and submit button setup in your XML layout
+        // Initialize SaveList
+        mSaveList = new SaveList(this);
+
+        // Rating bar & Submission
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         Button submitRatingButton = findViewById(R.id.submitRatingButton);
 
-        // Assuming you have your text views setup in your XML layout
+        // TextViews for saving
         TextView textViewTotalPrice = findViewById(R.id.textViewTotalPrice);
         TextView textViewNumberOfPeople = findViewById(R.id.textViewNumberOfPeople);
         TextView textViewFromDate = findViewById(R.id.textViewFromDate);
@@ -26,23 +31,22 @@ public class TotalPrice extends AppCompatActivity {
         TextView textViewTransportationMode = findViewById(R.id.textViewTransportationMode);
         TextView textViewLocation = findViewById(R.id.textViewLocationSelected);
 
-        // Set up a click listener for the submit button
+        // Click listener for the submit button
         submitRatingButton.setOnClickListener(v -> {
-            // Assuming you have obtained the rating from the rating bar
+            // Rating from the rating bar
             float rating = ratingBar.getRating();
-
-            // Your logic to submit the rating goes here
 
             // Show a notification that the rating has been submitted
             Toast.makeText(TotalPrice.this, "Rating submitted. Thank you!", Toast.LENGTH_SHORT).show();
         });
 
-        // Assuming you have retrieved and set the data for the text views
-        textViewTotalPrice.setText("Total Price: $100");
-        textViewNumberOfPeople.setText("Number of People: 4");
-        textViewFromDate.setText("From Date: 2024-04-20");
-        textViewToDate.setText("To Date: 2024-04-25");
-        textViewTransportationMode.setText("Transportation Mode: Flight");
-        textViewLocation.setText("Location: Paris");
+        // Retrieved and set data for the text views
+        textViewTotalPrice.setText("Total Price: $" + getIntent().getIntExtra("totalPrice", 0)); // Get total price from intent
+        textViewNumberOfPeople.setText("Number of People: " + mSaveList.loadNumberOfPeople()); // Load the number of people from SaveList
+        textViewFromDate.setText("From Date: " + mSaveList.loadFromDate()); // Load the departure date from SaveList
+        textViewToDate.setText("To Date: " + mSaveList.loadToDate()); // Load the arrival date from SaveList
+        textViewTransportationMode.setText("Transportation Mode: " + mSaveList.loadSelectedTransportation()); // Load the transportation mode from SaveList
+        String selectedLocation = mSaveList.loadSelectedLocation(); // Load the selected location from SaveList
+        textViewLocation.setText("Location: " + selectedLocation); // Set the selected location
     }
 }
