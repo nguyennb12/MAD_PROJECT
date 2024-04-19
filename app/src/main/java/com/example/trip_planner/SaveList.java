@@ -115,4 +115,57 @@ public class SaveList {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         return preferences.getString("selectedTransportation", "");
     }
+
+    /**
+     * Name	    : saveNumberOfPeople
+     * Purpose  : To save the number of people selected by the user
+     * Inputs	: int numberOfPeople - the number of people selected
+     * Outputs	: NONE
+     * Returns	: Nothing
+     */
+    public void saveNumberOfPeople(int numberOfPeople) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("numberOfPeople", numberOfPeople);
+        editor.apply();
+    }
+
+    /**
+     * Name	    : loadNumberOfPeople
+     * Purpose  : To load the number of people previously saved by the user
+     * Inputs	: NONE
+     * Outputs	: NONE
+     * Returns	: int - the number of people previously saved
+     */
+    public int loadNumberOfPeople() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        return preferences.getInt("numberOfPeople", 1); // Default to 1 if not found
+    }
+
+    /**
+     * Name       : saveSelectedLocation
+     * Purpose    : To save the selected location
+     * Inputs     : String location - the selected location
+     * Outputs    : NONE
+     * Returns    : Nothing
+     */
+    public void saveSelectedLocation(String location) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("selectedLocation", location);
+        editor.apply();
+    }
+
+    /**
+     * Name       : loadSelectedLocation
+     * Purpose    : To load the selected location
+     * Inputs     : NONE
+     * Outputs    : NONE
+     * Returns    : String - the selected location
+     */
+    public String loadSelectedLocation() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        return preferences.getString("selectedLocation", "");
+    }
+
 }
